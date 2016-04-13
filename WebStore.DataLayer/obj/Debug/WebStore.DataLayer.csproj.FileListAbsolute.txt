@@ -1,0 +1,12 @@
+D:\CSharp\WebStore\WebStore.DataLayer\obj\Debug\WebStore.DataLayer.csprojResolveAssemblyReference.cache
+D:\CSharp\WebStore\WebStore.DataLayer\bin\Debug\WebStore.DataLayer.dll.config
+D:\CSharp\WebStore\WebStore.DataLayer\bin\Debug\WebStore.DataLayer.dll
+D:\CSharp\WebStore\WebStore.DataLayer\bin\Debug\WebStore.DataLayer.pdb
+D:\CSharp\WebStore\WebStore.DataLayer\bin\Debug\EntityFramework.dll
+D:\CSharp\WebStore\WebStore.DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\CSharp\WebStore\WebStore.DataLayer\bin\Debug\WebStore.Domain.dll
+D:\CSharp\WebStore\WebStore.DataLayer\bin\Debug\WebStore.Domain.pdb
+D:\CSharp\WebStore\WebStore.DataLayer\bin\Debug\EntityFramework.xml
+D:\CSharp\WebStore\WebStore.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\CSharp\WebStore\WebStore.DataLayer\obj\Debug\WebStore.DataLayer.dll
+D:\CSharp\WebStore\WebStore.DataLayer\obj\Debug\WebStore.DataLayer.pdb
