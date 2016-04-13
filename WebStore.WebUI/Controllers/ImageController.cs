@@ -59,10 +59,10 @@ namespace WebStore.WebUI.Controllers
                     var fileName = System.IO.Path.GetFileName(model.ImageUpload.FileName);
                     var imagePath = Path.Combine(Server.MapPath(uploadDir), fileName);
                     var imageUrl = Path.Combine(uploadDir, fileName);
-                    if (System.IO.File.Exists(imagePath))
-                        ;
-                    else
-                        ;
+                    //if (System.IO.File.Exists(imagePath))
+                    //    ;
+                    //else
+                    //    ;
 
                     model.ImageUpload.SaveAs(imagePath);
                     image.ImageUrl = imageUrl;

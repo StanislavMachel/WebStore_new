@@ -38,3 +38,10 @@ D:\CSharp\WebStore\WebStore.UnitTests\bin\Debug\System.Web.WebPages.Deployment.x
 D:\CSharp\WebStore\WebStore.UnitTests\obj\Debug\WebStore.UnitTests.csprojResolveAssemblyReference.cache
 D:\CSharp\WebStore\WebStore.UnitTests\obj\Debug\WebStore.UnitTests.dll
 D:\CSharp\WebStore\WebStore.UnitTests\obj\Debug\WebStore.UnitTests.pdb
+D:\CSharp\WebStore\WebStore.UnitTests\bin\Debug\WebStore.DataLayer.dll
+D:\CSharp\WebStore\WebStore.UnitTests\bin\Debug\WebStore.Domain.dll
+D:\CSharp\WebStore\WebStore.UnitTests\bin\Debug\EntityFramework.dll
+D:\CSharp\WebStore\WebStore.UnitTests\bin\Debug\WebStore.Repository.dll
+D:\CSharp\WebStore\WebStore.UnitTests\bin\Debug\WebStore.Domain.pdb
+D:\CSharp\WebStore\WebStore.UnitTests\bin\Debug\EntityFramework.xml
+D:\CSharp\WebStore\WebStore.UnitTests\bin\Debug\WebStore.Repository.pdb
