@@ -10,20 +10,28 @@ namespace WebStore.Domain.Entities
 {
     public class Product
     {
-        public Product()
-        {
-            Images = new List<Image>();
-        }
+        //public Product()
+        //{
+
+            //Images = new List<Image>();
+        //}
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ProductID { get; set; }
-        public string Name { get; set; }
-        public int Quantity { get; set; }
-        public string Description { get; set; }
-        public decimal Price { get; set; }
-        public string Category { get; set; }
 
-        public virtual ICollection<Image> Images { get; set; }
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public string Description { get; set; }
+
+        [Required]
+        public int CategoryID { get; set; }
+
+        [ForeignKey("CategoryID")]
+        public virtual Category Category { get; set; }
+        
+        //public virtual ICollection<Image> Images { get; set; }
 
     }
 }

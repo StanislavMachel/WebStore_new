@@ -2,3 +2,4 @@ D:\CSharp\WebStore\WebStore.Domain\bin\Debug\WebStore.Domain.dll
 D:\CSharp\WebStore\WebStore.Domain\bin\Debug\WebStore.Domain.pdb
 D:\CSharp\WebStore\WebStore.Domain\obj\Debug\WebStore.Domain.dll
 D:\CSharp\WebStore\WebStore.Domain\obj\Debug\WebStore.Domain.pdb
+D:\CSharp\WebStore\WebStore.Domain\obj\Debug\WebStore.Domain.csprojResolveAssemblyReference.cache

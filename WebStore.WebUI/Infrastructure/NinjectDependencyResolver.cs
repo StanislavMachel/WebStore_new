@@ -31,7 +31,8 @@ namespace WebStore.WebUI.Infrastructure
 
         private void AddBindings()
         {
-            kernel.Bind<IImageRepository>().To<SimpleImageRepository>();
+            kernel.Bind<ICategoryRepository>().To<SimpleCategoryRepository>();
+            kernel.Bind<IProductRepository>().To<SimpleProductRepository>();
         }
     }
 }

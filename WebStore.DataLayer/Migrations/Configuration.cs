@@ -27,6 +27,9 @@ namespace WebStore.DataLayer.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+
+            
         }
     }
 }

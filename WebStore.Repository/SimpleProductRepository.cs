@@ -1,12 +1,72 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebStore.DataLayer;
+using WebStore.Domain.Entities;
+using WebStore.Domain.Abstract;
 
 namespace WebStore.Repository
 {
-    class SimpleProductRepository
+    public class SimpleProductRepository : IProductRepository
     {
+        private WebStoreDbContext ctx = new WebStoreDbContext();
+
+        //public IEnumerable<Product> GetProducts(string q)
+        //{
+        //    return ctx.Products
+        //        .Where(p => p.Name.StartsWith(q) || q == null)
+        //        .ToList().AsEnumerable();
+        //}
+
+        public IQueryable<Product> GetProducts()
+        {
+            return ctx.Products;
+        }
+        public Product GetProductById(int? id)
+        {
+            return ctx.Products.Find(id);
+        }
+
+        public void Dispose()
+        {
+            ctx.Dispose();
+        }
+
+        public void AddNewProduct(Product product)
+        {
+            ctx.Products.Add(product);
+        }
+
+        public void DeleteProduct(int id)
+        {
+            var product = ctx.Products.Find(id);
+            ctx.Products.Remove(product);
+
+        }
+
+        public ObservableCollection<Product> ProductsInMemory()
+        {
+            if (ctx.Products.Local.Count == 0)
+            {
+                GetProducts();
+            }
+            return ctx.Products.Local;
+        }
+
+        public void Save()
+        {
+            ctx.SaveChanges();
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            ctx.Entry(product).State = EntityState.Modified;
+        }
+
+        
     }
 }
