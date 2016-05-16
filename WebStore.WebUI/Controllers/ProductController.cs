@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebStore.Domain.Abstract;
 using WebStore.Domain.Entities;
+using WebStore.WebUI.Models;
 
 namespace WebStore.WebUI.Controllers
 {
@@ -22,8 +23,23 @@ namespace WebStore.WebUI.Controllers
         public ActionResult Index()
         {
             var products = productRepository.GetProducts();
-            ViewData["Categories"] = categoryRepository.GetGategories();
-            return View(products);
+            var categories = categoryRepository.GetGategories();
+            List<ProductViewModel> productViewModels =  new List<ProductViewModel>();
+            foreach (var product in products)
+            {
+                var category = categories.First(x => x.CategoryID == product.CategoryID).Name;
+
+                ProductViewModel productViewModel = new ProductViewModel()
+                {
+                    ProductID = product.ProductID,
+                    Name = product.Name,
+                    Description = product.Description,
+                    Category = category
+                };
+
+                productViewModels.Add(productViewModel);
+            }
+            return View(productViewModels);
         }
 
         // GET: Product/Details/5
@@ -34,11 +50,20 @@ namespace WebStore.WebUI.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var product = productRepository.GetProductById(id);
+            var category = categoryRepository.GetGategories().First(x => x.CategoryID == product.CategoryID).Name;
             if (product == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+            ViewData["ID"] = product.ProductID;
+            ProductViewModel productViewModel = new ProductViewModel()
+            {
+                Name = product.Name,
+                Description = product.Description,
+                Category = category
+            };
+
+            return View(productViewModel);
         }
 
         // GET: Product/Create
@@ -52,15 +77,22 @@ namespace WebStore.WebUI.Controllers
         // POST: Product/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductID,Name,Description,CategoryID")] Product product)
+        public ActionResult Create(/*[Bind(Include = "ProductID,Name,Description,Category")]*/ ProductViewModel productViewModel)
         {
             if (ModelState.IsValid)
             {
+                Product product = new Product()
+                {
+                    Name = productViewModel.Name,
+                    Description = productViewModel.Description,
+                    CategoryID = categoryRepository.GetGategories().First(x => x.Name == productViewModel.Category).CategoryID
+                };
                 productRepository.AddNewProduct(product);
                 productRepository.Save();
                 return RedirectToAction("Index");
             }
-            return View(product);
+
+            return View(productViewModel);
         }
 
         // GET: Product/Edit/5

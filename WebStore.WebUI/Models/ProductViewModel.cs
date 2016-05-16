@@ -7,17 +7,20 @@ using System.Threading.Tasks;
 
 namespace WebStore.WebUI.Models
 {
-    class ProductViewModel
+    public class ProductViewModel
     {
-        
-
+        [Display(Name = "ProductID")]
+        public int ProductID { get; set; }
         [Required]
+        [Display(Name = "Name")]
         public string Name { get; set; }
 
         [Required]
+        [Display(Name = "Description")]
         public string Description { get; set; }
 
         [Required]
-        public string Category 
+        [Display(Name = "Category")]
+        public string Category { get; set; }
     }
 }

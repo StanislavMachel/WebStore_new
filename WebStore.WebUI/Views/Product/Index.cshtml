@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebStore.Domain.Entities.Product>
+﻿@model IEnumerable<WebStore.WebUI.Models.ProductViewModel>
 @using System.Linq;
 
 @{
@@ -14,7 +14,7 @@
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CategoryID)
+            @Html.DisplayNameFor(model => model.Category)
         </th>
         
     </tr>
@@ -31,11 +31,8 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @{ 
-                    ViewData["Categories"]
-                }
+                @Html.DisplayFor(modelItem => item.Category)
             </td>
-
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
                 @Html.ActionLink("Details", "Details", new { id = item.ProductID }) |
